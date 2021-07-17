@@ -1,6 +1,7 @@
-export const sighIn = () => {
+export const sighIn = (userId) => {
     return {
-        type: 'SIGN_IN'
+        type: 'SIGN_IN',
+        payload: userId
     }
 }
 
