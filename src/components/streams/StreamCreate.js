@@ -3,11 +3,22 @@ import { Field, reduxForm } from 'redux-form';
 
 class StreamCreate extends React.Component {
 
-    renderInput(formProps){
+    renderError({ error, touched }){
+        if(touched && error){
+            return (
+                <div>
+                    {error}
+                </div>
+            )
+        }
+    }
+
+    renderInput = ({ label, input, meta })=> {
         return (
         <div>
-            <label>{formProps.label}</label>
-            <input {...formProps.input} />
+            <label>{label}</label>
+            <input {...input} autoComplete="off" />
+            {this.renderError(meta)}
         </div>
         )
     }
@@ -41,5 +52,6 @@ const validate = (formValues) => {
 }
 
 export default reduxForm({
-    form: 'streamCreate'
+    form: 'streamCreate',
+    validate
 })(StreamCreate);
