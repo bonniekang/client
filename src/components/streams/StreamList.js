@@ -24,7 +24,7 @@ class StreamList extends React.Component {
         return this.props.streams.map(stream => {
             return (
                 <div key={stream.id}>
-                    {stream.title}
+                    <Link to={`/streams/${stream/id}`}>{stream.title}</Link>
                     {stream.description}
                     {this.renderAdmin(stream)}
                 </div>
