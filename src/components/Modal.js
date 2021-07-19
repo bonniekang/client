@@ -7,8 +7,9 @@ const Modal = props => {
         <div onClick={() => history.push('/')} className="modals">
             <div onClick={(e) => e.stopPropagation()} 
             className="modal">
-                are you sure you want to delete this?
+                {props.content}
             </div>
+            {props.actions}
         </div>,
         document.querySelector('#modal')
     )
