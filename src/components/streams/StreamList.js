@@ -11,7 +11,11 @@ class StreamList extends React.Component {
 
     renderAdmin(stream) {
         if (stream.userId === this.props.currentUserId) {
-            return <div>Edit/ Delete</div>
+            return (
+            <div>
+                <Link to={`/streams/edit/${stream.id}`} >Edit</Link>
+            </div>
+            )
         }
     }
 
